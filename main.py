@@ -1,14 +1,13 @@
 import sys
 import os
 import pihole as ph
-pihole = ph.PiHole("(Write IP here)")
 import epd2in66
 import time
 from PIL import Image,ImageDraw,ImageFont
-import traceback
 
 x=0
 while x == 0: 
+    pihole = ph.PiHole("(Write IP here)")
     epd = epd2in66.EPD()
     epd.init(0)
     epd.Clear()
