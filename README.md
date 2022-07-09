@@ -13,6 +13,10 @@ Note: This guide assumes you have already installed the libraries required to us
 
 > `python3 -m pip install --no-cache-dir PiHole-api`
 
-2. Open main.py and change BOTH instances of (Write IP here) to your devices IPv4 address.
+2. Download the source code zip file from release 1.0 on the right of the page
 
-3. Run main.py
+3. Unzip it all to a new folder on the device connected to the display
+
+3. Open main.py and change BOTH instances of (Write IP here) to your devices IPv4 address.
+
+4. Run main.py, and leave it open.
