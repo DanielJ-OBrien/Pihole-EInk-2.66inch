@@ -4,25 +4,21 @@ import pihole as ph
 import epd2in66
 import time
 from PIL import Image,ImageDraw,ImageFont
-
+bmp = Image.open('logo.bmp')
 x=0
-while x == 0: 
-    pihole = ph.PiHole("(Write IP here)")
+while x == 0:
+    pihole = ph.PiHole("192.168.68.25")
     epd = epd2in66.EPD()
     epd.init(0)
     epd.Clear()
-
     font18 = ImageFont.truetype(('ibm_mono.ttc'), 18)
-    
     Himage = Image.new('1', (epd.height, epd.width), 0xFF)
     draw = ImageDraw.Draw(Himage)
-    bmp = Image.open('logo.bmp')
     Himage.paste(bmp, (0,0))
-    draw.text((0, 65), 'IP: (Write IP here) ', font = font18, fill = 0)
+    draw.text((0, 65), 'IP: 192.168.68.25 ', font = font18, fill = 0)
     draw.text((0, 85), 'Current Clients: ', font = font18, fill = 0)   
     draw.text((0, 105), 'Total Queries: ', font = font18, fill = 0)
     draw.text((0, 125), 'Blocked Queries: ', font = font18, fill = 0)
-    
     draw.text((213, 37), str(pihole.status), font = font18, fill = 0)
     draw.text((180, 85), str(pihole.total_clients), font = font18, fill = 0)   
     draw.text((160, 105), str(pihole.total_queries), font = font18, fill = 0)
